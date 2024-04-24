@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TeacherModel, StudentModel
+from .models import TeacherModel, TableModel
 
 
 class TeacherSRL(serializers.ModelSerializer):
@@ -10,7 +10,7 @@ class TeacherSRL(serializers.ModelSerializer):
 
 class StudentSrl(serializers.ModelSerializer):
     class Meta:
-        model = StudentModel
+        model = TableModel
         fields = "__all__"
 
 
