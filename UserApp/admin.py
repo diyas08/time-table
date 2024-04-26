@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import TeacherModel, TableModel, CallTimes
+from .models import TeacherModel, StudentsTable, TeacherTableModel, CallTimesModel
 
 admin.site.register(TeacherModel)
-admin.site.register(TableModel)
-admin.site.register(CallTimes)
+admin.site.register(StudentsTable)
+admin.site.register(TeacherTableModel)
+admin.site.register(CallTimesModel)

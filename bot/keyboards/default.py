@@ -8,5 +8,8 @@ keyboard_def = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Расписание учителей')
         ],
+        [
+            KeyboardButton(text='Время Звонков')
+        ],
     ], resize_keyboard=True
 )
