@@ -1,17 +1,19 @@
 from rest_framework import serializers
-from .models import TeacherModel, TableModel
+from .models import StudentsTable, TeacherTableModel, CallTimesModel
 
 
-class TeacherSRL(serializers.ModelSerializer):
+class TeacherSrl(serializers.ModelSerializer):
     class Meta:
-        model = TeacherModel
+        model = TeacherTableModel
         fields = "__all__"
 
 
 class StudentSrl(serializers.ModelSerializer):
     class Meta:
-        model = TableModel
+        model = StudentsTable
         fields = "__all__"
 
 
-
+class CallTimesSrl(serializers.ModelSerializer):
+    model = CallTimesModel
+    fields = "__all__"

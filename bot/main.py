@@ -8,10 +8,10 @@ from keyboards.default import keyboard_def
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 import sqlite3
 from states import CallbackStates
+
 # ----------#
 
 from aiogram.types import CallbackQuery
-from aiogram.utils.markdown import hbold
 
 connect = sqlite3.connect('../db.sqlite3', check_same_thread=False)
 cursor = connect.cursor()
@@ -23,13 +23,12 @@ dp = Dispatcher(bot)
 dp.middleware.setup(LoggingMiddleware())
 
 
-@dp.message_handler(commands=['start'])
-async def process_start_command(message: types.Message):
-    await message.answer("Start", reply_markup=keyboard_def)
-
-
-
+@dp.callback_query_handler(commands=['start'])
+async def process_start_command(call: types.CallbackQuery):
+    await call.message.answer("Start", reply_markup=keyboard_def)
 
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
+
+
