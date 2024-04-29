@@ -43,9 +43,6 @@ async def class_schedule(message: types.Message,state:FSMContext):
     await message.answer("Choose a class:", reply_markup=keyboard)
     await Shogirdchala.list_class.set()
 
-
-
-
 @dp.callback_query_handler(state=Shogirdchala.list_class)
 async def sinf_jadvali(call:types.CallbackQuery):
     cursor.execute("SELECT ")
