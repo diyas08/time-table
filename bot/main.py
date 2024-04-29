@@ -45,6 +45,7 @@ async def class_schedule(message: types.Message,state:FSMContext):
 
 
 
+
 @dp.callback_query_handler(state=Shogirdchala.list_class)
 async def sinf_jadvali(call:types.CallbackQuery):
     cursor.execute("SELECT ")
